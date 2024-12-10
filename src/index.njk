@@ -6,25 +6,34 @@
 
 {% block content %}
 <div class="container">
-  <h1>Main headline here</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
-  <h2>Library books loop</h2>
+  <h1>Explore Texas Cities</h1>
+  <p>Here is a look at some Central to Southern cities in Texas.</p>
+ <title>Cities in Texas</title>
+ <div>
+<section id="san-antonio">
+<h2> San Antonio</h2>
+<p>San Antonio is known for its rich colonial heritage, the Alamo, and its famous River Walk. It is a vibrant city full of culture, history, and delicious Tex-Mex cuisine.</p>
+</section>
+<section id="austin">
+<h2>Austin</h2>
+<p>Austin, the capital of Texas, is known for its live music scene, tech industry, and outdoor activities. It's a city that celebrates creativity and individuality.</p>
+</section>
+<section id="mcallen">
+<h2>Mcallen</h2>
+<p>McAllen is located in the Rio Grande Valley and is known for its vibrant cultural scene and proximity to the Mexico border. It’s also a gateway for birdwatching and nature lovers.</p>
+</section>
+<section id="southpadre">
+<h2>South Padre Island</h2>
+<p>South Padre Island is a popular tourist destination known for its beautiful beaches, water sports, and a laid-back, tropical atmosphere.</p>
+</section>
+  <h2>Cities in Texas</h2>
   <p>This loops through data that came from a Google Docs example.</p>
   <div class="row">
-    {% for book in library.books %}
+    {% for city in cities.Cities %}
       <div class="col">
-        <img src="img/{{ book.slug }}.jpg" alt="" class="img-fluid">
-        <h3><a href="books/{{ book.slug }}.html">{{ book.title }}</a></h3>
-      </div>
+        <img src="img/{{ city.Image }}" alt="Photo of {{city.Name}}" class="img-fluid">
+        <h3><a href="Cities/{{ city.slug }}.html">{{ city.Name }}</a></h3>
+     </div>
     {% endfor %}
-  </div>
-  <h2>Bookstores loop</h2>
-  <p>This loops through data that came from a Google Sheet example.</p>
-  <hr>
-  {% for store in bookstores.stores %}
-    <h3><a href="{{ store.url }}" target="_blank">{{ store.name }}</a></h3>
-    <p>{{ store.address}}, {{ store.city }}, {{ store.state }} {{ store.zip }}</p>
-    <hr>
-  {% endfor %}
-</div>
+</div> </div> </div>
 {% endblock %}
